@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubComponent } from './github/github.component';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http'
+import { ProfileService } from './services/profile.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,10 @@ import { GithubComponent } from './github/github.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
