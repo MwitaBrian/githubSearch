@@ -11,7 +11,6 @@ import { ProfileService } from './services/profile.service';
   declarations: [
     AppComponent,
     GithubComponent,
-    HttpClientModule
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,11 @@ import { ProfileService } from '../services/profile.service';
 })
 export class GithubComponent implements OnInit {
 
-  constructor() { }
+  constructor(private profileService: ProfileService) {
+    this.profileService.getProfileInfo().subscribe(profile => {
+      console.log(profile)
+    })
+   }
 
   ngOnInit(): void {
   }
