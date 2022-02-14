@@ -8,9 +8,12 @@ import { ProfileService } from '../services/profile.service';
 })
 export class GithubComponent implements OnInit {
 
+  profile:any[];
+
   constructor(private profileService: ProfileService) {
     this.profileService.getProfileInfo().subscribe(profile => {
-      console.log(profile)
+      console.log(profile);
+      this.profile = profile;
     })
    }
 
