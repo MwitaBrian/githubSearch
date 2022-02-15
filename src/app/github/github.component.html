@@ -1,39 +1,40 @@
-<div *ngIf="profile">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <b>Name: </b>{{profile.name}}<br>
-      <b>Username: </b><small><a href="{{profile.login}}">{{profile.login}}</a></small><br>
-      <span *ngIf="profile.company">, Works at {{profile.company}}<br></span>
-      {{profile.location}} 
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapse"
+        data-toggle="collapsed"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">Welcome to Github Search</a>
     </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-sm-3">
-          <img src="{{profile.avatar_url}}" class="img-circle img-responsive" alt="Profile Image">
-        </div>
-
-        <div class="col-sm-5">
-          <ul class="list-group">
-            <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
-            <li class="list-group-item" *ngIf="profile.hireable">Available for hire</li>
-            <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
-            <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}" target="_blank">{{profile.email}}</a></li>
-          </ul>
-        </div>
-
-        <div class="col-sm-4">
-          <div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav"></ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
             <p>
-              <span class="label label-default">{{profile.followers}} Followers</span>
-              <span class="label label-primary">Following {{profile.following}}</span>
-              <span class="label label-info">{{profile.public_repos}} Public Repos</span>
-              <span class="label label-success">{{profile.public_gists}} Public gists</span>
-              
+              A Platform that enables you to see both your friend's and your own
+              GitHub information such as your username, your avatar and a list
+              of your public repositories.
             </p>
+            <hr />
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
+
+
