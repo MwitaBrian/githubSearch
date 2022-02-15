@@ -13,7 +13,7 @@ export class GithubComponent implements OnInit {
   username: string;
 
   constructor(private profileService: ProfileService) {
-    this.profile =true;
+    this.profile;
    }
 
    findProfile(){

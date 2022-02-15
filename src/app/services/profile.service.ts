@@ -7,6 +7,8 @@ import { map } from 'rxjs/operators';
 })
 export class ProfileService {
   private username: string;
+  private client_id = '1217c4db8551cca19ed6';
+  private client_secret = 'ecc786830745ca7aadea966f57460207b3d7a372';
   
 
   constructor(private http: HttpClient ) {
@@ -15,12 +17,12 @@ export class ProfileService {
    }
 
    getProfileInfo(){
-     return this.http.get<any>('https://api.github.com/users/' + this.username)
+     return this.http.get<any>('https://api.github.com/users/' + this.username + '?client_id=' + this.client_id + '&client_secret='+ this.client_secret)
      .pipe(map(res => res));
    }
 
    getRepos(){
-    return this.http.get<any>('https://api.github.com/users/' + this.username + '/repos')
+    return this.http.get<any>('https://api.github.com/users/' + this.username + '/repos' + '?client_id=' + this.client_id + '&client_secret='+ this.client_secret)
     .pipe(map(res => res));
   }
 
