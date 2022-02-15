@@ -6,21 +6,21 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProfileService {
-  private user: string;
+  private username: string;
   
 
   constructor(private http: HttpClient ) {
     console.log("Service is now ready");
-    this.user = 'MwitaBrian'
+    this.username = 'MwitaBrian'
    }
 
    getProfileInfo(){
-     return this.http.get<any>('https://api.github.com/users/' + this.user)
+     return this.http.get<any>('https://api.github.com/users/' + this.username)
      .pipe(map(res => res));
    }
 
    getRepos(){
-    return this.http.get<any>('https://api.github.com/users/' + this.user + '/repos')
+    return this.http.get<any>('https://api.github.com/users/' + this.username + '/repos')
     .pipe(map(res => res));
   }
 }

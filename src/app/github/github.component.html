@@ -26,8 +26,10 @@
           <div class="panel-heading">
             <p>
               A Platform that enables you to see both your friend's and your own
-              GitHub information such as your username, your avatar and a list
-              of your public repositories.
+              GitHub information using the GitHub API.
+            </p>
+            <p>You're able to see data such as your username, your avatar and a list
+                of your public repositories.
             </p>
             <hr />
           </div>
@@ -38,17 +40,29 @@
 </div>
 <div class="container">
   <div class="row">
-    <div *ngIf="profile">
-      <div class="panel-heading">
-        <h5 class="panel-title">{{ profile.name }}</h5>
+    <div class="col-md-6">
+      <div class="panel-body">
+        <form action="" class="search">
+          <div form-group>
+            <input type="text" class="form-control" placeholder="Search for a git user with username">
+
+          </div>
+        </form>
       </div>
+    </div>
+
+    <div *ngIf="profile">
       <div class="panel-body">
         <div class="col-md-4">
+          <h5 class="panel-title">{{ profile.name }}</h5>
           <img
             class="github-avatar img-thumbnail"
             src="{{ profile.avatar_url }}"
             alt="Profile Image"
           />
+          <p>
+            <a href="{{profile.html_url}}" target="_blank" class="btn btn-outline-success btn-sm">View profile on github</a>
+          </p>
         </div>
         <div class="col-md-8">
           <div class="stats">
@@ -97,24 +111,18 @@
     <div class="row">
       <div *ngIf="profile">
         <div class="panel-heading">
-          <h5 class="panel-title">{{ profile.name }}'s Repos</h5>
+          <h3 class="panel-title">{{ profile.name }}'s Repos</h3>
         </div>
         <div class="panel-body">
           <div class="col-md-12">
             <div *ngFor="let repo of repos">
               <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-8">
                   <h4>
-                    <a href="{{repo.html_url}}" target="_blank">{{
-                      repo.name
-                    }}</a>
+                    <a href="{{repo.html_url}}" target="_blank">{{repo.name }}</a>
                   </h4>
                   <p>{{ repo.description }}</p>
-                </div>
-                <div class="col-md-3">
-                  <span>{{ repo.watchers }} Watchers</span>
-                  <span>{{ profile.forks }} Forks</span>
-                </div>
+                </div> <hr>
               </div>
             </div>
           </div>
