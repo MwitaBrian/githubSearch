@@ -10,9 +10,15 @@ export class GithubComponent implements OnInit {
 
   profile: any;
   repos: any;
+  username: string;
 
   constructor(private profileService: ProfileService) {
-    this.profileService.getProfileInfo().subscribe(profile => {
+    this.profile =true;
+   }
+
+   findProfile(){
+     this.profileService.updateProfile(this.username);
+     this.profileService.getProfileInfo().subscribe(profile => {
       console.log(profile);
       this.profile = profile;
     });
@@ -20,8 +26,8 @@ export class GithubComponent implements OnInit {
     this.profileService.getRepos().subscribe(repos => {
       console.log(repos);
       this.repos = repos;
-    })
-   }
+    })   
+    }
 
   ngOnInit(): void {
   }

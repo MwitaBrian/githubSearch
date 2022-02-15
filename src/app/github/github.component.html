@@ -48,7 +48,7 @@
               type="text"
               class="form-control"
               placeholder="Search for a git user with username"
-            /> <br>
+              [(ngModel)]="username" name="username" (keyup)="findProfile()"> <br>
             <input type="submit" class="btn btn-primary"/>
             <br>
           </div>

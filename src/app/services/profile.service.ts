@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -22,5 +22,9 @@ export class ProfileService {
    getRepos(){
     return this.http.get<any>('https://api.github.com/users/' + this.username + '/repos')
     .pipe(map(res => res));
+  }
+
+  updateProfile(username: string){
+    this.username = username;
   }
 }
