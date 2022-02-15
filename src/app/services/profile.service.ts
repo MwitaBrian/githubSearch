@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class ProfileService {
   private user: string;
-  private apiUrl: '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';
+  
 
   constructor(private http: HttpClient ) {
     console.log("Service is now ready");

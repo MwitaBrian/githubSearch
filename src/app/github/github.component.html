@@ -52,11 +52,18 @@
         </div>
         <div class="col-md-8">
           <div class="stats">
-            <span class="label label-primary"> {{profile.public_repos}} Public Repos</span>
-            <span class="label label-success"> {{profile.public_gists}} Public Gists</span>
-            <span class="label label-info"> {{profile.followers}} Followers</span>
-            <span class="label label-warning"> {{profile.following}} Following</span>
+            <span class="label bg-primary text-white"> {{profile.public_repos}} Public Repos</span>
+            <span class="label bg-success"> {{profile.public_gists}} Public Gists</span>
+            <span class="label bg-info"> {{profile.followers}} Followers</span>
+            <span class="label bg-warning"> {{profile.following}} Following</span>
           </div>
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Username: </strong> {{profile.login}}</li>
+            <li class="list-group-item"><strong>Bio: </strong> {{profile.bio}}</li>
+            <li class="list-group-item"><strong>Location: </strong> {{profile.location}}</li>
+            <li class="list-group-item"><strong>Email: </strong> {{profile.email}}</li>
+            <li class="list-group-item"><strong>Blog: </strong> {{profile.blog}}</li>
+          </ul>
         </div>
       </div>
     </div>
