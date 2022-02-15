@@ -18,4 +18,9 @@ export class ProfileService {
      return this.http.get<any>('https://api.github.com/users/' + this.user)
      .pipe(map(res => res));
    }
+
+   getRepos(){
+    return this.http.get<any>('https://api.github.com/users/' + this.user + '/repos')
+    .pipe(map(res => res));
+  }
 }
