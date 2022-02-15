@@ -1,8 +1,8 @@
 <div *ngIf="profile">
-  <div class="panel panel-default, container">
+  <div class="panel panel-default">
     <div class="panel-heading">
       <b>Name: </b>{{profile.name}}<br>
-      <b>Username: </b><small>{{profile.login}}</small><br>
+      <b>Username: </b><small><a href="{{profile.login}}">{{profile.login}}</a></small><br>
       <span *ngIf="profile.company">, Works at {{profile.company}}<br></span>
       {{profile.location}} 
     </div>
@@ -14,8 +14,23 @@
 
         <div class="col-sm-5">
           <ul class="list-group">
-            <li class="list-group-item" >{{profile.bio}}</li>
+            <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+            <li class="list-group-item" *ngIf="profile.hireable">Available for hire</li>
+            <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
+            <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}" target="_blank">{{profile.email}}</a></li>
           </ul>
+        </div>
+
+        <div class="col-sm-4">
+          <div>
+            <p>
+              <span class="label label-default">{{profile.followers}} Followers</span>
+              <span class="label label-primary">Following {{profile.following}}</span>
+              <span class="label label-info">{{profile.public_repos}} Public Repos</span>
+              <span class="label label-success">{{profile.public_gists}} Public gists</span>
+              
+            </p>
+          </div>
         </div>
       </div>
     </div>
