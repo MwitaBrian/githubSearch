@@ -2,7 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       {{profile.name}} <small>{{profile.login}}</small>
-      <span >Works at {{profile.company}}</span> 
+      <span *ngIf="profile.company">, Works at {{profile.company}}</span> 
     </div>
   </div>
 
