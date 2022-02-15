@@ -3,11 +3,10 @@
   border-radius: 5px;
   padding-left: 3px;
 }
+.search-form{
+  padding-top: 15px;
+}
 .label{
   letter-spacing: 1px;
   margin-left: 4px;
-}
-.btn{
-  
-  margin: 5px;
 }

@@ -28,24 +28,29 @@
               A Platform that enables you to see both your friend's and your own
               GitHub information using the GitHub API.
             </p>
-            <p>You're able to see data such as your username, your avatar and a list
-                of your public repositories.
+            <p>
+              You're able to see data such as your username, your avatar and a
+              list of your public repositories.
             </p>
-            <hr />
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container"> <hr>
   <div class="row">
     <div class="col-md-6">
       <div class="panel-body">
-        <form action="" class="search">
-          <div form-group>
-            <input type="text" class="form-control" placeholder="Search for a git user with username">
-
+        <form action="" class="search-form">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search for a git user with username"
+            /> <br>
+            <input type="submit" class="btn btn-primary"/>
+            <br>
           </div>
         </form>
       </div>
@@ -61,7 +66,12 @@
             alt="Profile Image"
           />
           <p>
-            <a href="{{profile.html_url}}" target="_blank" class="btn btn-outline-success btn-sm">View profile on github</a>
+            <a
+              href="{{ profile.html_url }}"
+              target="_blank"
+              class="btn btn-outline-success btn-sm"
+              >View profile on github
+              </a>
           </p>
         </div>
         <div class="col-md-8">
@@ -104,7 +114,6 @@
   <hr />
 </div>
 
-
 <br />
 <div class="jumbotron">
   <div class="container">
@@ -119,10 +128,13 @@
               <div class="row">
                 <div class="col-md-8">
                   <h4>
-                    <a href="{{repo.html_url}}" target="_blank">{{repo.name }}</a>
+                    <a href="{{ repo.html_url }}" target="_blank">{{
+                      repo.name
+                    }}</a>
                   </h4>
                   <p>{{ repo.description }}</p>
-                </div> <hr>
+                </div>
+                <hr />
               </div>
             </div>
           </div>
