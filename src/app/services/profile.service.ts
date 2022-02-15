@@ -15,7 +15,7 @@ export class ProfileService {
    }
 
    getProfileInfo(){
-     return this.http.get<any[]>('https://api.github.com/users/' + this.user + "&api_Url=" + this.apiUrl)
+     return this.http.get<any>('https://api.github.com/users/' + this.user)
      .pipe(map(res => res));
    }
 }
