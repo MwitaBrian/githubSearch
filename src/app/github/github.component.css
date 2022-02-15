@@ -3,7 +3,7 @@
   border-radius: 5px;
   padding-left: 3px;
 }
-.stats{
-  padding: 5px;
-  letter-spacing: 1px;
+.label{
+  letter-spacing: 2px;
+  margin-left: 4px;
 }
