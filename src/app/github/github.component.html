@@ -1,8 +1,9 @@
 <div *ngIf="profile">
-  <div class="panel panel-default">
+  <div class="panel panel-default, container">
     <div class="panel-heading">
-      {{profile.name}} <small>{{profile.login}}</small>
-      <span *ngIf="profile.company">, Works at {{profile.company}}</span>
+      <b>Name: </b>{{profile.name}}<br>
+      <b>Username: </b><small>{{profile.login}}</small><br>
+      <span *ngIf="profile.company">, Works at {{profile.company}}<br></span>
       {{profile.location}} 
     </div>
   </div>
